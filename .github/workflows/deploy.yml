@@ -36,3 +36,22 @@ jobs:
         npx wrangler deploy --env production
       env:
         CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v3
+      with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1 # Replace with your AWS region
+  
+    - name: Install Dependencies
+      run: npm install
+  
+    - name: Package Lambda Function
+      run: zip -r function.zip .
+  
+    - name: Deploy to AWS Lambda
+      run: |
+          aws lambda update-function-code \
+            --function-name test-lambda \
+            --zip-file fileb://function.zip
