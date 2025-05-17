@@ -45,13 +45,18 @@ jobs:
           aws-region: us-east-1 # Replace with your AWS region
   
     - name: Install Dependencies
-      run: npm install
+      run: |
+       cd lambda
+       npm install
   
     - name: Package Lambda Function
-      run: zip -r function.zip .
+      run: |
+        cd lambda
+        zip -r function.zip .
   
     - name: Deploy to AWS Lambda
       run: |
-          aws lambda update-function-code \
+        cd lambda
+        aws lambda update-function-code \
             --function-name test-lambda \
             --zip-file fileb://function.zip
