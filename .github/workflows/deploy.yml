@@ -24,4 +24,4 @@ jobs:
     - name: Publish to Cloudflare Workers
       env:
         CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      run: wrangler deploy
+      run: cd worker && wrangler deploy
