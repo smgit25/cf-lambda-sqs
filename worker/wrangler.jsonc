@@ -4,5 +4,5 @@
     "account_id": "d54ccd8de80616f6a14b18ed1d50d6b8", // Replace with your Cloudflare account ID
     "workers_dev": true, // Deploy to the workers.dev subdomain
     "compatibility_date": "2025-05-18",
-    "main": "index.js" // The date for compatibility checks
+    "main": "./index.js" // The date for compatibility checks
   }
