@@ -5,5 +5,11 @@
      // Replace with your Cloudflare account ID
     "workers_dev": true, // Deploy to the workers.dev subdomain
     "compatibility_date": "2025-05-17",
-    "main": "src/index.js" // The date for compatibility checks
+    "main": "src/index.js", // The date for compatibility checks
+    "kv_namespaces": [
+    {
+      "binding": "test",
+      "id": "f53b9180633b44c8a1b9e1cc39eace03"
+    }
+  ]
   }
