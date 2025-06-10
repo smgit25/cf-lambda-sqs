@@ -4,11 +4,11 @@ export default {
       // const value = await env.test.get("greeting");
 
       const user = {
-      name: "Alice",
+      name: "Alice1",
       age: 30,
       role: "admin"
     };
-    await env.test.put("user:alice", JSON.stringify(user));
+    await env.test1.put("user:alice", JSON.stringify(user));
 
     const storedValue = await env.test.get("user:alice");
     const parsed = storedValue ? JSON.parse(storedValue) : null;
