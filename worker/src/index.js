@@ -8,7 +8,7 @@ export default {
       age: 30,
       role: "admin"
     };
-    await env.test1.put("user:alice", JSON.stringify(user));
+    await env.test1.put("user:alice1", JSON.stringify(user));
 
     const storedValue = await env.test.get("user:alice");
     const parsed = storedValue ? JSON.parse(storedValue) : null;
